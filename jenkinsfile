@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+                git https://github.com/CHETHANDM/jenkins-docker-demo.git
+            }
+        }
+        stage('install') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'runnig tests.......'
+            }
+        }
+    }
+}
